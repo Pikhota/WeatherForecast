@@ -1,0 +1,45 @@
+﻿@model  WeatherForecastApp.Models.CurrentWeatherDTO
+
+<div class="container">
+    <div class="row">
+        <h2 class="h2">Weather in @Model.City, @Model.Country</h2>
+    </div>
+    <div class="card bg-info" id="current-weather">
+        <div class="card-title">
+            <h3 class="h3">
+                <img src="@Model.WeatherIcon" alt="Weather @Model.City" width="50" height="50"><span class="temperature">@Model.Temperature</span>
+            </h3>
+            <p><i>@Model.Cloudiness</i></p>
+        </div>
+        <div class="card-body">
+            <div class="row">
+                <div class="col-md-4 border">Wind:&nbsp;</div>
+                <div class="col-md-8 border"><span>@Model.Wind,</span>&nbsp;<span>@Model.WindDirection</span></div>
+            </div>
+            <div class="row">
+                <div class="col-md-4 border">Pressure:&nbsp;</div>
+                <div class="col-md-8 border">@Model.Pressure</div>
+            </div>
+            <div class="row">
+                <div class="col-md-4 border">Humidity:&nbsp;</div>
+                <div class="col-md-8 border">@Model.Humidity</div>
+            </div>
+            <div class="row">
+                <div class="col-md-4 border">Sunrise:&nbsp;</div>
+                <div class="col-md-8 border">@Model.Sunrise</div>
+            </div>
+            <div class="row">
+                <div class="col-md-4 border">Sunset:&nbsp;</div>
+                <div class="col-md-8 border">@Model.Sunset</div>
+            </div>
+            <div class="row">
+                <div class="col-md-4 border">Coords:&nbsp;</div>
+                <div class="col-md-8 border">
+                    <a class="link-color" href="/weathermap?zoom=8&amp;lat=@Model.CoordLat&amp;lon=@Model.CoordLon">
+                        [<span>@Model.CoordLat</span>,&nbsp;<span>@Model.CoordLon</span>]
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

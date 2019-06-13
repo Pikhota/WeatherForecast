@@ -1,0 +1,24 @@
+﻿@model List<WeatherForecastApp.Models.TimePeriodDTO>
+
+
+<div class="container">
+    <h2 class="h2">Hourly weather and forecasts in @Model[0].Location</h2>
+    @foreach (var weather in Model)
+    {
+        <div class="card bg-info card-weather">
+            <div class="card-body">
+                <div class="row">
+                    <h3 class="h3 date">@weather.Date</h3>
+                    <div class="col-md-2">
+                        <span class="temperature">@weather.Temp</span><img src="@weather.Icon" title="@weather.CloudsName" />
+                        <p>Time:&nbsp;<span>@weather.Time</span></p>
+                    </div>
+                    <div class="col-md-4">
+                        <i>@weather.CloudsName</i>
+                        <p><span>@weather.WindSpeed</span>,</p><p><span>@weather.CloudsValue</span>,&nbsp;<span>@weather.Pressure</span></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
+</div>
